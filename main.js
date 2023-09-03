@@ -1,4 +1,6 @@
-// Mark Lund - DGM 3760 - Todo Data
+// Mark Lund - DGM 3760 - Todo Data Model
+// I'm uncertain whether a functional link between the JS and HTML is desired yet so
+// I'll just try and implement the JS requirements for now
 
 // I need a way to increment the IDs of todo items
 // Maybe there's a better way to do this but for now
@@ -20,3 +22,18 @@ class todoItem {
     }
 }
 
+// we need a function to put a new todoItem into the itemList
+function addItemToList (givenName, givenCategory, givenDuedate) {
+    let currentItem = new todoItem(givenName, givenCategory, givenDuedate)
+    itemList.unshift(currentItem)
+}
+
+// and one to delete a todoItem with a specific ID - full disclosure I asked GPT for help
+// with this one but I didn't copy verbatim, just some idea stuff
+// I'd actually not heard of findIndex before this
+function removeItemByID (givenID) {
+    let theIndex = itemList.findIndex(function(itemToCheck){
+        return itemToCheck.ID === givenID
+    })
+    itemList.splice(theIndex, 1)
+}
