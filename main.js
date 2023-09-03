@@ -37,3 +37,5 @@ function removeItemByID (givenID) {
     })
     itemList.splice(theIndex, 1)
 }
+
+// I get the sense that I'm misunderstanding something
